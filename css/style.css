@@ -1,0 +1,11 @@
+h3 {
+  color: red;
+  margin-top: 1px;
+  margin-bottom: 2px;
+}
+
+figcaption {
+  font-size: 32pt;
+  font-weight: bold;
+  margin-top: 20px;
+}
