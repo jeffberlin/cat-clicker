@@ -36,12 +36,6 @@
 
       <script>
 
-        var sassy = document.getElementById("catimage");
-        sassy.src = 'images/cat.jpg';
-        sassy.height = "500";
-        sassy.width = "640";
-        sassy.alt = "Sassy Cat";
-
         var addUp = function(counterId) {
           var count = 0;
 
@@ -51,37 +45,33 @@
                 counterEle.innerHTML = "Picture Clicks: " + ++count;
           }
         };
+        
+        var sassy = document.getElementById("catimage");
+        sassy.src = 'images/cat.jpg';
+        sassy.alt = "Sassy Cat";
         var catImage = document.getElementById("catimage");
         catImage.addEventListener("click", addUp("sassycount"),false);
 
         var grumpy = document.getElementById("grumpyimage");
         grumpy.src = 'images/grumpy-cat.jpg';
-        grumpy.height = "500";
-        grumpy.width = "640";
         grumpy.alt = "Grumpy Cat";
         var catImage = document.getElementById("grumpyimage");
         catImage.addEventListener("click", addUp("grumpycount"),false);
 
         var cuddlecats = document.getElementById("cuddlingcats");
         cuddlecats.src = 'images/cuddles.jpg';
-        cuddlecats.height = "500";
-        cuddlecats.width = "640";
         cuddlecats.alt = "Cuddling Cats";
         var catImage = document.getElementById("cuddlingcats");
         catImage.addEventListener("click", addUp("cuddlecount"),false);
 
         var sketchy = document.getElementById("sketchycat");
         sketchy.src = 'images/sketchycat.jpg';
-        sketchy.height = "500";
-        sketchy.width = "640";
         sketchy.alt = "Sketchy Cat";
         var catImage = document.getElementById("sketchycat");
         catImage.addEventListener("click", addUp("sketchcount"),false);
 
         var sneeze = document.getElementById("sneezecat");
         sneeze.src = 'images/sneezingcat.jpg';
-        sneeze.height = "500";
-        sneeze.width = "640";
         sneeze.alt = "Sneezing Cat";
         var catImage = document.getElementById("sneezecat");
         catImage.addEventListener("click", addUp("sneezecount"),false);

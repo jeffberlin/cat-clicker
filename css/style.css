@@ -9,3 +9,8 @@ figcaption {
   font-weight: bold;
   margin-top: 20px;
 }
+
+img {
+	height: 500px;
+	width: 640px;
+}
