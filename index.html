@@ -4,7 +4,8 @@
     <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
-    <div>
+
+    <!-- <div>
       <figcaption>Sassy Cat</figcaption>
       <h3 id="sassycount">Picture Clicks: 0</h3>
       <img id="catimage">
@@ -33,48 +34,87 @@
       <h3 id="sneezecount">Picture Clicks: 0</h3>
       <img id="sneezecat">
     </div>
-
+ -->
+    <div id="catinfo">
+    </div>
       <script>
 
-        var addUp = function(counterId) {
-          var count = 0;
-
-          return function () {
-            var counterEle = document.getElementById(counterId);
-            if (counterEle)
-                counterEle.innerHTML = "Picture Clicks: " + ++count;
+        var cats = [
+          {
+            caption: 'Sassy Cat',
+            image: 'cat.jpg'
+          },
+          {
+            caption: 'Grupmy Cat',
+            image: 'grumpy-cat.jpg'
+          },
+          {
+            caption: 'Cuddling Cats',
+            image: 'cuddles.jpg'
+          },
+          {
+            caption: 'Sketchy Cat',
+            image: 'sketchycat.jpg'
+          },
+          {
+            caption: 'Sneezing Cat',
+            image: 'sneezingcat.jpg'
           }
-        };
+        ]
+
+        var root = document.querySelector('div#catinfo')
+
+        for (var i = 0; i < cats.length; i++) {
+          root.innerHTML += "<div><figcaption>"+cats[i].caption+"</figcaption><h3 data-count=0>Picture clicks: 0</h3><img src=images/"+cats[i].image+"></div>"
+        }
+
+        var catLinks = document.querySelectorAll('img')
+
+        for(var i = 0; i < catLinks.length; i++) {
+          catLinks[i].addEventListener('click', function() {
+            var h3 = this.parentNode.querySelector('h3')
+            count = parseInt(h3.dataset.count)
+            newcount = count += 1
+
+            h3.setAttribute('data-count', newcount)
+            h3.innerHTML = "Picture clicks: "+ newcount
+
+          })
+        }
+
+        // .addEventListener("click", function() {
+        //   console.log('hi')
+        // });
         
-        var sassy = document.getElementById("catimage");
-        sassy.src = 'images/cat.jpg';
-        sassy.alt = "Sassy Cat";
-        var catImage = document.getElementById("catimage");
-        catImage.addEventListener("click", addUp("sassycount"),false);
+        // var sassy = document.getElementById("catimage");
+        // sassy.src = 'images/cat.jpg';
+        // sassy.alt = "Sassy Cat";
+        // var catImage = document.getElementById("catimage");
+        // catImage.addEventListener("click", addUp("sassycount"),false);
 
-        var grumpy = document.getElementById("grumpyimage");
-        grumpy.src = 'images/grumpy-cat.jpg';
-        grumpy.alt = "Grumpy Cat";
-        var catImage = document.getElementById("grumpyimage");
-        catImage.addEventListener("click", addUp("grumpycount"),false);
+        // var grumpy = document.getElementById("grumpyimage");
+        // grumpy.src = 'images/grumpy-cat.jpg';
+        // grumpy.alt = "Grumpy Cat";
+        // var catImage = document.getElementById("grumpyimage");
+        // catImage.addEventListener("click", addUp("grumpycount"),false);
 
-        var cuddlecats = document.getElementById("cuddlingcats");
-        cuddlecats.src = 'images/cuddles.jpg';
-        cuddlecats.alt = "Cuddling Cats";
-        var catImage = document.getElementById("cuddlingcats");
-        catImage.addEventListener("click", addUp("cuddlecount"),false);
+        // var cuddlecats = document.getElementById("cuddlingcats");
+        // cuddlecats.src = 'images/cuddles.jpg';
+        // cuddlecats.alt = "Cuddling Cats";
+        // var catImage = document.getElementById("cuddlingcats");
+        // catImage.addEventListener("click", addUp("cuddlecount"),false);
 
-        var sketchy = document.getElementById("sketchycat");
-        sketchy.src = 'images/sketchycat.jpg';
-        sketchy.alt = "Sketchy Cat";
-        var catImage = document.getElementById("sketchycat");
-        catImage.addEventListener("click", addUp("sketchcount"),false);
+        // var sketchy = document.getElementById("sketchycat");
+        // sketchy.src = 'images/sketchycat.jpg';
+        // sketchy.alt = "Sketchy Cat";
+        // var catImage = document.getElementById("sketchycat");
+        // catImage.addEventListener("click", addUp("sketchcount"),false);
 
-        var sneeze = document.getElementById("sneezecat");
-        sneeze.src = 'images/sneezingcat.jpg';
-        sneeze.alt = "Sneezing Cat";
-        var catImage = document.getElementById("sneezecat");
-        catImage.addEventListener("click", addUp("sneezecount"),false);
+        // var sneeze = document.getElementById("sneezecat");
+        // sneeze.src = 'images/sneezingcat.jpg';
+        // sneeze.alt = "Sneezing Cat";
+        // var catImage = document.getElementById("sneezecat");
+        // catImage.addEventListener("click", addUp("sneezecount"),false);
 
 /*
          document.body.innerHTML = 'Picture Clicks: ';
