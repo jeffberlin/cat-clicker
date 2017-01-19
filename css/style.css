@@ -1,3 +1,7 @@
+body {
+	background: #ffffff;
+}
+
 h3 {
   color: red;
   margin-top: 1px;
@@ -13,4 +17,18 @@ figcaption {
 img {
 	height: 500px;
 	width: 640px;
+}
+
+ul {
+	font-size: 18pt;
+	color: #07A5B0;
+	text-shadow: .5px .5px black;
+	letter-spacing: 1.5px;
+	text-decoration: underline;
+	/*display: flex;*/
+}
+
+li>a:hover {
+	color: #3C08E5;
+	text-decoration: underline;
 }
