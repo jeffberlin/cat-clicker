@@ -7,7 +7,7 @@
   <body>
 
   	<ul id="selector" name="select"></ul>
-    <div id="catselector"></div>
+    <!-- <div id="catselector"></div> -->
   	<div id="catinfo"></div>
 
     <script>
@@ -49,7 +49,8 @@
     		root.innerHTML += "<li ><a href'#' data-id="+i+">"+model.catList[i].title+"<a></li>";
     	}
 
-        function updateCatInfo() {
+        function updateCatInfo(event) {
+            event.preventDefault();
             model.currentCat = model.catList[this.dataset.id];
             var catData = "<div><figcaption>"+model.currentCat.caption+"</figcaption><h3 data-count=0>Picture Clicks: 0</h3><img src=images/"+model.currentCat.imgSrc+"></div>";
             catInfo.innerHTML = catData;
@@ -66,7 +67,7 @@
             h3.innerHTML = "Picture Clicks: "+ newcount
         }
 
-        var allCats = document.querySelectorAll('#selector li');
+        var allCats = document.querySelectorAll('#selector li>a');
 
         allCats.forEach(function(cat) {
             cat.addEventListener('click', updateCatInfo)
