@@ -81,10 +81,6 @@
 
           })
         }
-
-        // .addEventListener("click", function() {
-        //   console.log('hi')
-        // });
         
         // var sassy = document.getElementById("catimage");
         // sassy.src = 'images/cat.jpg';
@@ -136,3 +132,94 @@
 
   </body>
 </html>
+
+
+
+<div id="catselector"></div>
+    <div id="catinfo"></div>
+
+    <script>
+
+      var model = {
+        currentCat: null,
+        catList: [
+        {
+          title: 'Sassy',
+          caption: 'Sassy Cat',
+          imgSrc: 'cat.jpg'
+        },
+        {
+          title: 'Grumpy',
+          caption: 'Grumpy Cat',
+          imgSrc: 'grumpy-cat.jpg'
+        },
+        {
+          title: 'Cuddles',
+          caption: 'Cuddling Cats',
+          imgSrc: 'cuddles.jpg'
+        },
+        {
+          title: 'Sketchy',
+          caption: 'Sketchy Cat',
+          imgSrc: 'sketchycat.jpg'
+        },
+        {
+          title: 'Sneezing',
+          caption: 'Sneezing Cat',
+          imgSrc: 'sneezingcat.jpg'
+        }
+      ]
+    };
+      var root = document.querySelector('div#catselector')
+
+      for (var i = 0; i < model.catList.length; i++) {
+        root.innerHTML += "<div><ul>"+model.catList[i].title+"</ul></div>"
+      }
+
+        var kitty = document.querySelector('div#catinfo')
+
+        for (var i = 0; i < model.catList.length; i++) {
+          kitty.innerHTML += "<div><figcaption>"+model.catList[i].caption+"</figcaption><h3 data-count=0>Picture clicks: 0</h3><img src=images/"+model.catList[i].imgSrc+"></div>"
+        }
+
+        var catClicks = document.querySelectorAll('img')
+
+        for(var i = 0; i < catClicks.length; i++) {
+          catClicks[i].addEventListener('click', function() {
+            var h3 = this.parentNode.querySelector('h3')
+            count = parseInt(h3.dataset.count)
+            newcount = count += 1
+
+            h3.setAttribute('data-count', newcount)
+            h3.innerHTML = "Picture clicks: "+ newcount
+          })
+        }
+
+        //selecting different cats
+        var octopus = {
+
+          init: function() {
+            model.currentCat = model.catList[0].imgSrc;
+            catListView.init();
+            catView.init();
+          },
+
+            getcurrentCat: function(){
+              return model.currentCat;
+            },
+
+            getCats: function() {
+              return model.catList;
+            },
+
+            setcurrentCat: function(cat) {
+              model.currentCat = cat;
+            }
+          }
+
+          var catView = {
+
+            init: function() {
+              this.catElem = document.getElementById('catinfo');
+            }
+          }
