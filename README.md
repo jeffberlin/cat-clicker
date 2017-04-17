@@ -2,7 +2,7 @@
 Click the cat pictures and see how many clicks you can rack up
 
 # How to run:
-* Download the files, or visit the live GitHub Pages here: https://jeffberlin.github.io/cat-clicker/
+* Download the files, or visit the live GitHub Pages here: https://jeffberlin.github.io/cat-clicker/ or https://jeffberlin.github.io/cat-clicker/index2.html (difference is listed below)
 * Unzip the files
 * Open a browser of your choice
 * Open either the `index.html` or `index2.html` file
